@@ -3,6 +3,8 @@ RUN         mkdir -p /build /unpack
 WORKDIR     /unpack
 ADD         assets/repack.sh .
 ARG         FCREPO_VERSION
+ARG         MYSQL_CONNECTOR_VERSION=8.0.30
+ARG         PSQL_CONNECTOR_VERSION=42.4.1
 RUN         bash ./repack.sh
 
 FROM        jetty:9-jre8
